@@ -7,7 +7,9 @@ function App() {
     const [busca, setBusca] = useState('');
     console.log(busca);
 
-    const clientesFiltrados = clientes.filter((cliente) => cliente.includes(busca));
+    const clientesFiltrados = clientes.filter((cliente) =>
+        cliente.toLowerCase().includes(busca.toLowerCase())
+    );
 
     return (
         <div className="App">
