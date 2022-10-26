@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-    const cliente = [
+    const clientes = [
         {
             id: 1,
             name: 'Jomar',
@@ -36,19 +36,23 @@ function App() {
             name: 'João',
         },
     ];
-    const [enviado, setEnviado] = useState(false);
-    console.log(cliente);
-    document.getElementById('demo').innerHTML = cliente.map();
+
+    console.log(clientes.name);
+
     return (
         <div className="App">
             <p>Buscar Novos</p>
             <input type="text" placeholder="Buscar Novos"></input>
-            <button id="btn" className="btn" onClick={() => setEnviado(true)}>
+            {/* <button id="btn" className="btn">
                 Enviar
-            </button>
+            </button> */}
             <div>
-                <p>Clientes:{enviado}</p>
-                <p id="demo"></p>
+                <p>Clientes:</p>
+                <ul>
+                    {clientes.map((cliente) => (
+                        <li key={cliente}>{cliente.name}</li>
+                    ))}
+                </ul>
             </div>
         </div>
     );
