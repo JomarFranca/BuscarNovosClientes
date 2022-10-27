@@ -7,8 +7,10 @@ function App() {
     const [busca, setBusca] = useState('');
     console.log(busca);
 
+    const lowerBusca = busca.toLowerCase();
+
     const clientesFiltrados = clientes.filter((cliente) =>
-        cliente.toLowerCase().includes(busca.toLowerCase())
+        cliente.toLowerCase().includes(lowerBusca)
     );
 
     return (
